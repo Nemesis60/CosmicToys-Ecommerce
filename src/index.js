@@ -25,6 +25,17 @@ app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/auth", authRoutes);
 
+app.get("/api/v1/contact", (req, res) => {
+    res.render('contact', {
+
+    })
+})
+app.get("/api/v1/about", (req, res) => {
+    res.render('about', {
+        
+    })
+})
+
 connectDB();
 
 // port connected with express server

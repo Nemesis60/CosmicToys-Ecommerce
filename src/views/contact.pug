@@ -10,8 +10,8 @@ html(lang="en")
     body
         div.container
             header.header
-                a(href="#").header__logo
-                    img(src="../../public/img/toPage/Personalized-logo.png", alt="Cosmic Toys Logo")
+                a(href="/api/v1/product/index").header__logo
+                    img(src="../../public/img/Personalized-logo.png", alt="Cosmic Toys Logo")
                 input(type="checkbox")#menu-bar
                 label(for="menu-bar") Menu
                 nav.header__navbar
@@ -21,24 +21,40 @@ html(lang="en")
                         li
                             a(href=("#")) Discover
                         li
-                            a(href=("#")) About
+                            a(href=("/api/v1/about")) About
+                        li
+                            a(href=("/api/v1/contact")) Contact
                         li
                             a(href=("#")) Admin
                                 ul
                                     li
-                                        a(href="#") Users 
+                                        a(href="/api/v1/user/users") Users 
                                     li 
-                                        a(href="#") Upload User
+                                        a(href="/api/v1/auth/register") Upload User
                                     li
-                                        a(href="/api/v1/product/upload") Upload Product
+                                        a(href="/api/v1/product/new-product") Upload Product 
 
             main.contact
                 div.contact__box
-                    div.contact__left
                     form(action="", method="post").contact__right
                         h2 Contact Us
-                        input(type="text" name="name")
-                        input(type="text" name="email")
-                        input(type="text" name="phone")
-                        textarea#(name="message", cols="30", rows="10")
+                        input(type="text" placeholder="Your Name")
+                        input(type="text" placeholder="Email")
+                        input(type="text" placeholder="Phone number")
+                        textarea(placeholder="Message", cols="30", rows="10")#message
                         button(type="submit") send
+
+            footer.footer
+                div.footer__content
+                    h3 Cosmic Toys
+                    p 
+                    ul.footer__socials 
+                        li
+                            a(href="") LinkedIn
+                        li
+                            a(href="") Facebook
+                        li
+                            a(href="") Instagram
+                div.footer__bottom 
+                    p copyright @2023 Andres Santiago
+                a(href="").footer__back Go Back

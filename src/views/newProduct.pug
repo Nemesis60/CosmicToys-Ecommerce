@@ -5,13 +5,46 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Upload Product
-    style
+        style
             include ../../public/css/main.css
+        script(type='text/javascript').
+            let form = document.querySelector('#submitHigh')
+
+            function handleForm(event) { event.preventDefault(); } 
+            form.addEventListener('submit', handleForm);
+
+            const title = document.querySelector('#title')
+            const price = document.querySelector('#price')
+            const offer = document.querySelector('#offer')
+            const age = document.querySelector('#age')
+            const brand = document.querySelector('#brand')
+            const inStock = document.querySelector('#in-stock')
+            const shortD = document.querySelector('#s-description')
+            const largeD = document.querySelector('#l-description')
+            const image = document.querySelector('#imageFile')
+
+            const API_URL = '/api/v1/product/create';
+            const sendProduct = () => {
+                fetch(API_URL, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify({
+                    title: title, price: price, offer: offer, recommendedAge: age,
+                    brand: brand, inStock: inStock, sDescription: shortD,
+                    lDescription: largeD, image: image
+                })
+            })
+            .then((res) => { console.log(res) } )
+            .catch((err) => { console.log(err) } )
+            }
     body
         div.container
             header.header
-                a(href="#").header__logo
-                    img(src="../../public/img/toPage/Personalized-logo.png", alt="Cosmic Toys Logo")
+                a(href="/api/v1/product/index").header__logo
+                    img(src="../../public/img/Personalized-logo.png", alt="Cosmic Toys Logo")
                 input(type="checkbox")#menu-bar
                 label(for="menu-bar") Menu
                 nav.header__navbar
@@ -21,40 +54,42 @@ html(lang="en")
                         li
                             a(href=("#")) Discover
                         li
-                            a(href=("#")) About
+                            a(href=("/api/v1/about")) About
+                        li
+                            a(href=("/api/v1/contact")) Contact
                         li
                             a(href=("#")) Admin
                                 ul
                                     li
-                                        a(href="#") Users 
+                                        a(href="/api/v1/user/users") Users 
                                     li 
-                                        a(href="#") Upload User
+                                        a(href="/api/v1/auth/register") Upload User
                                     li
-                                        a(href="/api/v1/product/upload") Upload Product
+                                        a(href="/api/v1/product/new-product") Upload Product 
             main.main-form
                 h1 Form to upload Product
-                form(action="/api/v1/product/create", method="post").form-product 
+                form(onsubmit=sendProduct, method="post").form-product#submitHigh
                     div.form__input-container
-                        input(type="text" placeholder="product Title")
+                        input(type="text" placeholder="product Title")#title
                     div.form__input-container
-                        input(type="number" placeholder="product Price")
+                        input(type="number" placeholder="product Price")#price
                     div.form__input-container
-                        input(type="number" placeholder="Product Offer")
+                        input(type="number" placeholder="Product Offer")#offer
                     div.form__input-container
-                        input(type="text" placeholder="Gender")  
+                        input(type="text" placeholder="Age Recommended")#age
                     div.form__input-container
-                        input(type="text" placeholder="Age")
+                        input(type="text" placeholder="Brand Product")#brand
                     div.form__input-container
-                        input(type="number" placeholder="how much in Stock")
+                        input(type="number" placeholder="how much in Stock")#in-stock
                     div.form__input-container
                         label(for="s-description") Short Description
                         textarea(name="s-description", cols="30", rows="3")#s-description 
                         label(for="s-description") max 60
                     div.form__input-container
                         label(for="l-description") Large Description
-                        textarea(name="l-description", cols="30", rows="10")#l-description 
+                        textarea(placeholder="l-description", cols="30", rows="10")#l-description 
                     div.form__input-container
-                        input(type="file" name="filename")#myFile
+                        input(type="file" name="filename")#imageFile
                     button(type="submit") Send Product
 
             footer.footer
@@ -70,4 +105,5 @@ html(lang="en")
                             a(href="") Instagram
                 div.footer__bottom 
                     p copyright @2023 Andres Santiago
-                a(href="").footer__back Go Back    
+                a(href="").footer__back Go Back
+        

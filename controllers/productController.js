@@ -45,10 +45,10 @@ const newProduct = (req, res) => {
 }
 
 const createProduct = async (req, res) => {
-    const { User, productName, lDescription, sDescription, price, offer, images, recommendedAge, gender, inStock } = req.body;
+    const { title, lDescription, sDescription, price, offer, brand, typeShipping, recommendedAge, inStock, images } = req.body;
 
     const product = {
-        User, productName, lDescription, sDescription, price, offer, images, recommendedAge, gender, inStock
+        title, lDescription, sDescription, price, offer, brand, typeShipping, recommendedAge, inStock, images
     }
 
     const newProduct = await productModel.create(product)

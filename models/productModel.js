@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
     //     ref: "Users",
     //     required: true
     // },
-    productName: {
+    title: {
         type: String,
         require: true,
         trim: true
@@ -31,23 +31,27 @@ const productSchema = new mongoose.Schema({
         type: Number,
         trim: true
     },
+    brand: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    typeShipping: {
+        type: Boolean,
+        default: false,
+    },
     recommendedAge: {
         type: String,
         require: true,
         trim: true,
-    },
-    gender: {
-        type: String,
-        required: true,
-        trim: true
     },
     inStock: {
         type: Number,
         required: true,
         trim: true
     },
-    images: {
-        type: [String],
+    image: {
+        type: String,
         required: true,
         trim: true
     },

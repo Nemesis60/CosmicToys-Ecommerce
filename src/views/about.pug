@@ -1,0 +1,74 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title About Us
+    style
+            include ../../public/css/main.css
+    body
+        div.container
+            header.header
+                a(href="/api/v1/product/index").header__logo
+                    img(src="../../public/img/Personalized-logo.png" alt="Cosmic Toys Logo")
+                input(type="checkbox")#menu-bar
+                label(for="menu-bar") Menu
+                nav.header__navbar
+                    ul
+                        li
+                            a(href="/api/v1/product/index") Home 
+                        li
+                            a(href=("#")) Discover
+                        li
+                            a(href=("/api/v1/about")) About
+                        li
+                            a(href=("/api/v1/contact")) Contact
+                        li
+                            a(href=("#")) Admin
+                                ul
+                                    li
+                                        a(href="/api/v1/user/users") Users 
+                                    li 
+                                        a(href="/api/v1/auth/register") Upload User
+                                    li
+                                        a(href="/api/v1/product/new-product") Upload Product 
+
+    main.about
+        div.about__information
+            h1 About Us
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero, est saepe recusandae explicabo vel fugit, repellendus aspernatur cum quidem animi alias. Vitae consectetur mollitia ullam rerum, quisquam sint architecto exercitationem.
+        div.about__cards-container
+            div.about__card
+                h2 Mission
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae reprehenderit similique facilis animi alias voluptates impedit inventore labore laudantium, iste tempore quod iure rerum consectetur laborum ipsam. Molestias, ab sint!
+            div.about__card
+                h2 Vision
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae reprehenderit similique facilis animi alias voluptates impedit inventore labore laudantium, iste tempore quod iure rerum consectetur laborum ipsam. Molestias, ab sint!
+            div.about__card
+                h2 Achievements
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae reprehenderit similique facilis animi alias voluptates impedit inventore labore laudantium, iste tempore quod iure rerum consectetur laborum ipsam. Molestias, ab sint!
+        div.about__me
+            div.about__me-left
+                    ul
+                        li  LinkedIn: 
+                            a(href="#") https://www.linkedin.com/in/andressantiagodiez/
+                        li Portfolio: 
+                            a(href="#") Portfolio
+            div.about__me-right
+                img(src="", alt="my face")
+
+    footer.footer
+                div.footer__content
+                    h3 Cosmic Toys
+                    p 
+                    ul.footer__socials 
+                        li
+                            a(href="") LinkedIn
+                        li
+                            a(href="") Facebook
+                        li
+                            a(href="") Instagram
+                div.footer__bottom 
+                    p copyright @2023 Andres Santiago
+                a(href="").footer__back Go Back
