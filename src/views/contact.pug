@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Contact
+    style
+            include ../../public/css/main.css
+    body
+        div.container
+            header.header
+                a(href="#").header__logo
+                    img(src="../../public/img/toPage/Personalized-logo.png", alt="Cosmic Toys Logo")
+                input(type="checkbox")#menu-bar
+                label(for="menu-bar") Menu
+                nav.header__navbar
+                    ul
+                        li
+                            a(href="/api/v1/product/index") Home 
+                        li
+                            a(href=("#")) Discover
+                        li
+                            a(href=("#")) About
+                        li
+                            a(href=("#")) Admin
+                                ul
+                                    li
+                                        a(href="#") Users 
+                                    li 
+                                        a(href="#") Upload User
+                                    li
+                                        a(href="/api/v1/product/upload") Upload Product
+
+            main.contact
+                div.contact__box
+                    div.contact__left
+                    form(action="", method="post").contact__right
+                        h2 Contact Us
+                        input(type="text" name="name")
+                        input(type="text" name="email")
+                        input(type="text" name="phone")
+                        textarea#(name="message", cols="30", rows="10")
+                        button(type="submit") send

@@ -1,0 +1,67 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Cosmic Toys
+
+        style
+            include ../../public/css/main.css
+    body
+        div.container
+            header.header
+                a(href="#").header__logo
+                    img(src="../../public/img/toPage/Personalized-logo.png", alt="Cosmic Toys Logo")
+                input(type="checkbox")#menu-bar
+                label(for="menu-bar") Menu
+                nav.header__navbar
+                    ul
+                        li
+                            a(href=("#")) Home
+                        li
+                            a(href=("#")) Discover
+                        li
+                            a(href=("#")) About
+                        li
+                            a(href=("#")) Admin
+                                ul
+                                    li
+                                        a(href="#") Users 
+                                    li 
+                                        a(href="#") Upload User
+                                    li
+                                        a(href="/api/v1/product/upload") Upload Product 
+
+            main.main
+                div.main__container
+                    
+                    h2.main__products-title Products
+                    div.main__card-container
+                        each product of allProducts
+                            div.main__card-display
+                                    div.main__img
+                                        each image in product.images
+                                            img(src=image)
+                                    div.main__card-information
+                                        h3.main__card-title= product.productName
+                                        p.main__card-sDescription= product.sDescription
+                                        p.main__card-price= product.price
+                                        div.main__card-btn
+                                            button Add to Cart 
+                                            a(href=`detail/${product._id}`) View
+
+            footer.footer
+                div.footer__content
+                    h3 Cosmic Toys
+                    p 
+                    ul.footer__socials 
+                        li
+                            a(href="") LinkedIn
+                        li
+                            a(href="") Facebook
+                        li
+                            a(href="") Instagram
+                div.footer__bottom 
+                    p copyright @2023 Andres Santiago
+                a(href="").footer__back Go Back

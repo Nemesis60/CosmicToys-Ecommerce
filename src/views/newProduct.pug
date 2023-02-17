@@ -1,0 +1,73 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Upload Product
+    style
+            include ../../public/css/main.css
+    body
+        div.container
+            header.header
+                a(href="#").header__logo
+                    img(src="../../public/img/toPage/Personalized-logo.png", alt="Cosmic Toys Logo")
+                input(type="checkbox")#menu-bar
+                label(for="menu-bar") Menu
+                nav.header__navbar
+                    ul
+                        li
+                            a(href="/api/v1/product/index") Home 
+                        li
+                            a(href=("#")) Discover
+                        li
+                            a(href=("#")) About
+                        li
+                            a(href=("#")) Admin
+                                ul
+                                    li
+                                        a(href="#") Users 
+                                    li 
+                                        a(href="#") Upload User
+                                    li
+                                        a(href="/api/v1/product/upload") Upload Product
+            main.main-form
+                h1 Form to upload Product
+                form(action="/api/v1/product/create", method="post").form-product 
+                    div.form__input-container
+                        input(type="text" placeholder="product Title")
+                    div.form__input-container
+                        input(type="number" placeholder="product Price")
+                    div.form__input-container
+                        input(type="number" placeholder="Product Offer")
+                    div.form__input-container
+                        input(type="text" placeholder="Gender")  
+                    div.form__input-container
+                        input(type="text" placeholder="Age")
+                    div.form__input-container
+                        input(type="number" placeholder="how much in Stock")
+                    div.form__input-container
+                        label(for="s-description") Short Description
+                        textarea(name="s-description", cols="30", rows="3")#s-description 
+                        label(for="s-description") max 60
+                    div.form__input-container
+                        label(for="l-description") Large Description
+                        textarea(name="l-description", cols="30", rows="10")#l-description 
+                    div.form__input-container
+                        input(type="file" name="filename")#myFile
+                    button(type="submit") Send Product
+
+            footer.footer
+                div.footer__content
+                    h3 Cosmic Toys
+                    p 
+                    ul.footer__socials 
+                        li
+                            a(href="") LinkedIn
+                        li
+                            a(href="") Facebook
+                        li
+                            a(href="") Instagram
+                div.footer__bottom 
+                    p copyright @2023 Andres Santiago
+                a(href="").footer__back Go Back    

@@ -1,0 +1,78 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= title
+
+    style
+            include ../../public/css/main.css
+    body 
+        div.container
+            header.header
+                a(href="#").header__logo
+                    img(src="../../public/img/Personalized-logo.png", alt="Cosmic Toys Logo")
+                input(type="checkbox")#menu-bar
+                label(for="menu-bar") Menu
+                nav.header__navbar
+                    ul
+                        li
+                            a(href="/api/v1/product/index") Home 
+                        li
+                            a(href=("#")) Discover
+                        li
+                            a(href=("#")) About
+                        li
+                            a(href=("#")) Admin
+                                ul
+                                    li
+                                        a(href="#") Users 
+                                    li 
+                                        a(href="#") Upload User
+                                    li
+                                        a(href="#") Upload Product
+            main.main
+                div.card
+                    div.card__product-img
+                        each image in images
+                            img(src=image, alt="")
+                    div.card__content
+                        a(href="/api/v1/product/index").card__content-route Return Home
+                        h2.card__title= name
+                        p.card__short= short
+                            div.card__price
+                                p.card__original-price= price
+                                p.card__offer-price= offer
+                        div.card__detail
+                            h2 about:
+                            p= large
+                            div.card__detail-age
+                                h3 recommended Age: 
+                                p= age
+                            div.card__detail-gender
+                                h3 gender:
+                                p= gender
+                            div.card__detail-stock
+                                h3 in Stock: 
+                                p= stock
+                        div.card__purchase
+                            input(type="number" min="0" value="1")
+                            button.card__purchase-cart Add to Cart
+                            button.card__purchase-now
+                                a(href="#").card__purchase-now-a Buy Now
+                        
+            footer.footer
+                div.footer__content
+                    h3 Cosmic Toys
+                    p 
+                    ul.footer__socials 
+                        li
+                            a(href="") LinkedIn
+                        li
+                            a(href="") Facebook
+                        li
+                            a(href="") Instagram
+                div.footer__bottom 
+                    p copyright @2023 Andres Santiago
+                a(href="").footer__back Go Back

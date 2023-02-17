@@ -1,0 +1,126 @@
+.card {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    max-height: 600px;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border: 2px solid #000;
+}
+
+
+.card__content-route {
+    color: #7086f8;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.card__title {
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.card__title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 4px;
+    width: 80px;
+    background: #ff6d00;
+}
+.card__short {
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.card__original-price {
+    font-size: 1.8rem 0;
+    font-weight: 700;
+}
+
+.card__detail h2 {
+    text-transform: capitalize;
+    color: #ff6d00;
+}
+.card__detail p {
+    font-size: .9rem;
+    padding: .3rem;
+    opacity: .8;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.card__detail-age, .card__detail-gender, .card__detail-stock {
+    display: flex;
+}
+.card__detail-age h3, .card__detail-gender h3 {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: #ff6d00;
+}
+.card__detail-age p {
+    position: relative;
+    top: 2px;
+}
+.card__detail-age p, .card__detail-gender p {
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.card__detail-stock p {
+    font-size: 1rem;
+    font-size: bold;
+}
+
+.card__purchase {
+    display: flex;
+}
+.card__purchase input {
+    border-radius: 10px;
+    height: 35px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+.card__purchase-cart {
+    height: 35px;
+    width: 40%;
+    font-size: 1rem;
+    margin-right: 5px;
+}
+.card__purchase-now {
+    height: 35px;
+    width: 40%;
+    border: 1px solid #000;
+    text-align: center;
+}
+.card__purchase-now-a {
+    font-weight: 700;
+    color: #ff6d00;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+    .card {
+        flex-direction: row;
+    }
+    .card img {
+        width: 400px;
+        height: 100%;
+        margin-right: 15px;
+    }
+}

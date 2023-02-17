@@ -1,0 +1,19 @@
+.main-form {
+    display: flex;
+    flex-direction: column;
+    margin: 70px auto 0 auto;
+    max-width: 1100px;
+    justify-content: center;
+    align-items: center;
+}
+.form-product {
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 40px;
+}
+.form__input-container {
+    display: flex;
+    flex-direction: column;
+}

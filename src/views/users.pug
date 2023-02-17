@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Users
+    style
+            include ../../public/css/main.css
+    body 
+        div.container
+            header.header
+                a(href="#").header__logo
+                    img(src="../../public/img/Personalized-logo.png", alt="Cosmic Toys Logo")
+                input(type="checkbox")#menu-bar
+                label(for="menu-bar") Menu
+                nav.header__navbar
+                    ul
+                        li
+                            a(href="/api/v1/product/index") Home 
+                        li
+                            a(href=("#")) Discover
+                        li
+                            a(href=("#")) About
+                        li
+                            a(href=("#")) Admin
+                                ul
+                                    li
+                                        a(href="api/v1/user/users") Users 
+                                    li 
+                                        a(href="#") Upload User
+                                    li
+                                        a(href="#") Upload Product

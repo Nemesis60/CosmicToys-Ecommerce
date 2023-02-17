@@ -1,0 +1,105 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 70px auto 0 auto;
+}
+.main__products-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff6d00;
+}
+.main__card-container {
+    display: grid;
+}
+.main__card {
+    display: flex;
+}
+.main__card-display {
+    width: 280px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    border-bottom: 8px solid #ff6d00;
+    border-radius: 5px;
+    border: 1px solid #464444;
+}
+.main__img {
+    width: 100%;
+    height: 55%;
+}
+.main__img img {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.main__card-information {
+    display: inherit;
+    flex-direction: column;
+    width: 100%;
+    height: 45%;
+    padding: 0 5px;
+    background-color: #fff;
+    line-height: 0;
+}
+
+.main__card-sDescription {
+    line-height: 18px;
+    position: relative;
+    bottom: 20px;
+    height: 20px;
+    margin-top: 20px;
+}
+.main__card-price {
+    position: relative;
+    bottom: 20px;
+    font-weight: 600;
+}
+.main__card-btn {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 20px;
+}
+.main__card-btn button {
+    width: 48%;
+    height: 35px;
+    cursor: pointer;
+}
+.main__card-btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    height: 35px;
+    cursor: pointer;
+    border: 1px solid #000;
+    font-weight: 700;
+    color: #ff6d00;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+    .main__card-container {
+        grid-template-columns: auto auto;
+    }
+    .main__card-display {
+        margin-left:  10px;
+        margin-right:  10px;
+    }
+    .main__card-btn button {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main__card-container {
+        grid-template-columns: auto auto auto;
+    }
+}
